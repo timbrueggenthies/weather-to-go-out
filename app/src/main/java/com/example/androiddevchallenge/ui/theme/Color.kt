@@ -15,9 +15,39 @@
  */
 package com.example.androiddevchallenge.ui.theme
 
+import androidx.compose.material.darkColors
+import androidx.compose.material.lightColors
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 
-val purple200 = Color(0xFFBB86FC)
-val purple500 = Color(0xFF6200EE)
-val purple700 = Color(0xFF3700B3)
-val teal200 = Color(0xFF03DAC5)
+/* Colors of Weather App */
+
+class WeatherColors(
+    val badgeColor: Color
+)
+
+private val badgeColorDark = Color(56, 53, 84)
+private val badgeColorLight = Color(56, 53, 84)
+
+val LocalWeatherColors = staticCompositionLocalOf { LightWeatherColors }
+
+val LightWeatherColors = WeatherColors(
+    badgeColor = badgeColorLight
+)
+
+val DarkWeatherColors = WeatherColors(
+    badgeColor = badgeColorDark
+)
+
+/* Base Material Colors */
+
+private val primaryColor = Color(0xFFBB86FC)
+private val secondaryColor = Color(0xFF03DAC5)
+private val backgroundDark = Color(29, 33, 46)
+
+val DarkColorPalette = darkColors(
+    background = backgroundDark
+)
+
+val LightColorPalette = lightColors()
+
